@@ -8,6 +8,7 @@ import org.example.poly.PerformanceTeam;
 // ctrl alt v, 변수선언해줌
 public class Main {
     public static void main(String[] args) {
+//        new Dancer();  // 추상화된 클래스는 객체로 인스턴스화 할수 없음
 
         IdolDancer idolDancer1 = new IdolDancer("아이돌팀1", "아이돌1");
         IdolDancer idolDancer2 = new IdolDancer("아이돌팀2", "아이돌2");
@@ -25,5 +26,8 @@ public class Main {
         team.joinDancer(streetDancer1);
         team.joinDancer(streetDancer2);
         team.joinDancer(streetDancer3);
+
+        System.out.println();
+        team.groupDance();
     }
 }

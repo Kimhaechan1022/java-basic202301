@@ -1,6 +1,7 @@
 package org.example.inherit;
 
 import org.example.basic.Dancer;
+import org.example.basic.Rapper;
 
 /*
  상속받은 클래스의 객체를 선언할때는 부모의 객체도 선언되어 해당 부모를 링크한다.
@@ -11,8 +12,9 @@ import org.example.basic.Dancer;
 
  */
 
-public class IdolDancer extends Dancer {
+public class IdolDancer extends Dancer implements Singer, Rapper {
     private int numberOfFan; //팬의 수
+
 
 
 //     생성자를 선언하지 않을시 기본생성자가 자동으로 생성됨
@@ -30,11 +32,18 @@ public class IdolDancer extends Dancer {
 
     // 부모메서드의 시그니처(이름, 리턴타입, 파라미터)를 맞춰야함
     @Override
-    public void dance() {
-        super.dance();
+    public void  dance() {
+
         wink();
     }
 
 
+    @Override
+    public void rap() {
 
+    }
+    @Override
+    public void sing(){
+
+    }
 }

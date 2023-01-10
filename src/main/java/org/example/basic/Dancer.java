@@ -4,7 +4,7 @@ package org.example.basic;
 import static org.example.basic.DanceLevel.*;
 
 // 상속을 하지 않는 사용자 지정 클래스는 자동으로 extends object 됨
-public class Dancer {
+public abstract class Dancer {
 
     // 기본생성자 생성시 final로 지정한 필드값을 초기화 하지 못하기 떄문에 에러가 생길수 있음
     // 기본생성자로 객체 선언시 default 한 상수값을 처리해주면 에러 해결 가능
@@ -45,17 +45,7 @@ public class Dancer {
         this.flexible = true;
     }
 
-    public void dance() {
-        // 캡슐화를 위한 private 강제와 클래스내 호출
-        stretct();
-        makeFlexible();
-
-        if(!flexible){
-            System.out.println("유연성 운동 안해서 죽음");
-            return;
-        }
-        System.out.println(myName + "님이 춤을 춤");
-    }
+    public abstract void dance();
 
     public String getCrewName() {
         return crewName;

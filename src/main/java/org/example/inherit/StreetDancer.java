@@ -8,13 +8,11 @@ public class StreetDancer extends Dancer {
         super(crewName, myName);
     }
 
+
     @Override
     public void dance(){
-        super.dance();
+
         System.out.println("비보잉을 세게 갈깁니다.");
     }
-
-
-
 
 }
