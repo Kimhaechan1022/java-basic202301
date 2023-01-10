@@ -57,4 +57,11 @@ public class Dancer {
         System.out.println(myName + "님이 춤을 춤");
     }
 
+    public String getCrewName() {
+        return crewName;
+    }
+
+    public String getMyName() {
+        return myName;
+    }
 }
