@@ -48,7 +48,7 @@ public class Main {
     public static List<String> getHealthyDishName2(List<Dish> menu) {
         return menu.stream()
                 .filter(d -> d.getCalories() < 400)
-                .sorted(comparing(Dish::getCalories))
+                .sorted(comparing(dish -> dish.getCalories()))
                 .map(Dish::getName)
                 .collect(Collectors.toList());
 

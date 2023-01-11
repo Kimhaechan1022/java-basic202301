@@ -64,6 +64,8 @@ public class Filtering {
                 .collect(toList())
                 .forEach(out::println);
 
+
+
     }
 
 
