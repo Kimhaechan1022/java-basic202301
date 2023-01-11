@@ -61,8 +61,8 @@ public class Main {
         // 모든 거래자의 이름을 리스트에 모아서 알파벳 순으로 오름차순 정렬
         // List<String>
         traders.stream()
-                .sorted(Comparator.comparing(e -> e.getName().toLowerCase()))
-                .map(trader -> trader.getName())
+                .map(Trader::getName)
+                .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList())
                 .forEach(out::println);
     }
