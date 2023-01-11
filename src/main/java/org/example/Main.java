@@ -1,33 +1,30 @@
 package org.example;
 
 import org.example.basic.Dancer;
+import org.example.beans.Goods;
 import org.example.inherit.IdolDancer;
 import org.example.inherit.StreetDancer;
 import org.example.poly.PerformanceTeam;
 
+import java.util.HashSet;
+import java.util.Set;
+
+
 // ctrl alt v, 변수선언해줌
 public class Main {
     public static void main(String[] args) {
-//        new Dancer();  // 추상화된 클래스는 객체로 인스턴스화 할수 없음
+        Goods goods1 = new Goods("세탁기", 30000);
+        Goods goods2 = new Goods("세탁기", 30000);
+        
 
-        IdolDancer idolDancer1 = new IdolDancer("아이돌팀1", "아이돌1");
-        IdolDancer idolDancer2 = new IdolDancer("아이돌팀2", "아이돌2");
-        IdolDancer idolDancer3 = new IdolDancer("아이돌팀3", "아이돌3");
+        System.out.println("goods1 = " + goods1);
+        System.out.println("goods2 = " + goods2);
+        System.out.println(goods1.equals(goods2));
 
-        StreetDancer streetDancer1 = new StreetDancer("스트릿팀1", "스트릿댄서1");
-        StreetDancer streetDancer2 = new StreetDancer("스트릿팀2", "스트릿댄서2");
-        StreetDancer streetDancer3 = new StreetDancer("스트릿팀3", "스트릿댄서3");
+        Set<Goods> set1 = new HashSet<>();
+        set1.add(goods1);
+        set1.add(goods2);
+        System.out.println(set1);
 
-        PerformanceTeam team = new PerformanceTeam();
-
-        team.joinDancer(idolDancer1);
-        team.joinDancer(idolDancer2);
-        team.joinDancer(idolDancer3);
-        team.joinDancer(streetDancer1);
-        team.joinDancer(streetDancer2);
-        team.joinDancer(streetDancer3);
-
-        System.out.println();
-        team.groupDance();
     }
 }
