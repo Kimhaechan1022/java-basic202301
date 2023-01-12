@@ -32,7 +32,6 @@ public class Main {
                 new Transaction(alan, 2022, 950)
         );
 
-
         // 연습 1: 2021년에 발생한 모든 거래를 찾아 거래액 오름차 정렬(작은 값에서 큰 값).
         // List<Transaction>
         transactions.stream()
@@ -40,7 +39,6 @@ public class Main {
                 .sorted(Comparator.comparing(Transaction::getValue))
                 .collect(Collectors.toList())
                 .forEach(out::println);
-
 
         // 연습 2: 거래자가 근무하는 모든 도시이름을 중복 없이 나열하시오.
         // List<String>
