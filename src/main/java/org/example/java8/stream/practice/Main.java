@@ -1,9 +1,6 @@
 package org.example.java8.stream.practice;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.lang.System.out;
@@ -63,5 +60,34 @@ public class Main {
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList())
                 .forEach(out::println);
+
+        out.println("===================================================");
+
+        // 연습 5: Milan에 거주하는 거래자가 한명이라도 있는지 여부 확인?
+        boolean isPre = traders.stream()
+                .anyMatch(t -> t.getCity() == "Milan");
+        out.println("isPre = " + isPre);
+
+        // 연습 6: Cambridge에 사는 거래자의 모든 거래액의 총합 출력.
+
+        int sum = transactions.stream()
+                .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
+                .mapToInt(t -> t.getValue())
+                .sum();
+        out.println("sum = " + sum);
+
+        // 연습 7: 모든 거래에서 최고거래액은 얼마인가?
+        int max = transactions.stream()
+                .mapToInt(Transaction::getValue)
+                .max()
+                .getAsInt();
+        out.println("max = " + max);
+
+        // 가장작은 거래액을 가진 거래 정보를 탐색
+        Optional<Transaction> smallestTran = transactions.stream()
+                .min(Comparator.comparing(Transaction::getValue));
+        smallestTran.ifPresent(out::println);
+
+
     }
 }
